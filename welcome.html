@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="stylee.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha Example</title>
+    <div class="logo">
+    
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyfdGFB4vIMrJ77c-Z16sz9q8IgGbO_BcNAQ&s" style="height: 45px;border-radius: 50%; margin:10px; ">
+    </div>
+<div class="titlee">
+    <h2 style="text-align: center; color: white; margin-top: -75px; padding: 10px; padding-bottom: 10px; padding-top: 30px; background-color:#1B1464 ;">
+        ALLIED SCHOOL
+    </h2>
+    </div>
+
+    <script>
+        function generateCaptcha() {
+            let chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            let captcha = "";
+            for (let i = 0; i < 5; i++) {
+                captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById("captcha").innerText = captcha;
+            document.getElementById("captchaValue").value = captcha;
+        }
+
+        function validateForm() {
+            let userInput = document.getElementById("userCaptcha").value;
+            let realCaptcha = document.getElementById("captchaValue").value;
+
+            if (userInput !== realCaptcha) {
+                alert("Incorrect CAPTCHA!");
+            } else {
+                // ✅ CAPTCHA sahi → next page open
+                window.location.href="secondpage.html";
+            }
+
+            return false; // page reload rokne ke liye
+        }
+    </script>
+</head>
+<body onload="generateCaptcha()">
+
+<div class="login-box">
+
+<form onsubmit="return validateForm()">
+
+    <label style="color: white;"><h1>Captcha:</h1></label><br>
+    <span id="captcha" style="font-weight:bold;color: rgb(244, 169, 6);"></span><br><br>
+
+    <input type="hidden" id="captchaValue">
+
+    <input type="text" id="userCaptcha" placeholder="Enter CAPTCHA" style="color: white; background-color: rgba(0, 0, 0, 0.349);"><br><br>
+
+    <div class="btnone">
+        <button type="submit" style="
+            border: 2px solid #b3aa2f;
+            padding: 14px 10px;
+            width: 100px;
+            border-radius: 25px;
+            color: white;
+            background: none;">
+            Click Now
+        </button>
+    </div>
+
+</form>
+</div>
+</body>
+</html>

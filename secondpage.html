@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allied School</title>
+<link rel="stylesheet" href="styleee.css" type="text/css">
+
+<style>
+
+/* ================= POPUP FIX ================= */
+.popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.popup-box{
+    position:relative;
+    background:white;
+    padding:10px;
+    border-radius:10px;
+}
+
+.popup-box img{
+    width:100%;
+    max-width:500px;
+    height:auto;
+    border-radius:10px;
+}
+
+#closeBtn{
+    position:absolute;
+    top:5px;
+    right:10px;
+    font-size:30px;
+    cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h3>
+     <a href="https://wa.me/923335020124?text=Hello%20bhai" style="color: white;text-decoration: none; font-weight: bold;">
+     Parent Helpline 0333-5020124
+     </a>
+    </h3>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyfdGFB4vIMrJ77c-Z16sz9q8IgGbO_BcNAQ&s"
+    id="logo" style="cursor:pointer;">
+</div>
+
+<!-- MENU -->
+<div class="navbarone">
+    <ul>
+        <li><a href="#">Admission</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div>
+<!-- POPUP IMAGE -->
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyfdGFB4vIMrJ77c-Z16sz9q8IgGbO_BcNAQ&s"
+id="logo2" width="100" style="cursor:pointer; display:none;">
+
+<div id="popup" class="popup">
+    <div class="popup-box">
+        <span id="closeBtn">&times;</span>
+        <img src="https://alliedschools.edu.pk/wp-content/themes/kindori/assets/images/Franchise_and_Adm_Mzd.jpeg">
+    </div>
+</div>
+
+<!-- SLIDER (same as yours) -->
+<div class="slider">
+    <div class="slides">
+
+        <!-- School -->
+        <img src="images/img1.jpg">
+
+        <!-- Students -->
+        <img src="images/img2.jpg">
+
+        <!-- Classroom -->
+        <img src="images/mg5.jpg">
+
+    </div>
+</div>
+
+<div class="h1one">
+    <h1>
+    Allied Schools
+    </h1>
+</div>
+<div class="honee">
+    <h1>
+        A Bright Future while growing together.
+    </h1>
+</div>
+<div class="btnonee">
+    <a href="about.html">
+        Discover More
+    </a>
+
+</div>
+<!-- SCRIPT -->
+<script>
+
+let logo = document.getElementById("logo");
+let popup = document.getElementById("popup");
+let closeBtn = document.getElementById("closeBtn");
+
+logo.onclick = function(){
+    popup.style.display = "flex";
+}
+
+closeBtn.onclick = function(){
+    popup.style.display = "none";
+}
+
+popup.onclick = function(e){
+    if(e.target === popup){
+        popup.style.display = "none";
+    }
+}
+
+</script>
+
+<div class="cards">
+
+    <!-- RED -->
+    <div class="card red">
+        <img src="data:image/jpeg;base64,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" style="border-radius: 10px;">
+        <h3>Admissions</h3>
+        <p>Apply now for new session.</p>
+        <br>
+        <a href="admission.html" style="font-weight: bold; text-decoration: none; border: 1.5px solid rgba(244, 239, 239, 0.804); color: rgb(255, 254, 254);border-radius: 15px; padding: 10px;background-color:rgba(165, 42, 42, 0.427);">Read More</a>
+    </div>
+
+    <!-- YELLOW -->
+    <div class="card yellow">
+        <img src="https://alliedschools.edu.pk/wp-content/uploads/2020/08/image-fcb-1.jpg" style="border-radius: 10px; height: 80px; width: 80px;">
+        <h3>Programs</h3>
+        <p>Explore our courses.</p>
+        <br>
+        <a href="programs.html" style="border-radius: 15px;text-decoration: none; font-weight: bold; border: 1.5px solid white; padding: 10px; background-color: rgba(208, 174, 4, 0.756); color: white; ">Read More</a>
+    </div>
+
+    <!-- GREEN -->
+    <div class="card green">
+        <img src="data:image/png;base64,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" style="border-radius: 10px;">
+        <h3>Contact</h3>
+        <p>Get in touch.</p>
+        <br>
+        <a href="contact.html" style="border-radius: 15px; padding: 10px;text-decoration: none; color: white; font-weight: bold; border: 1.5px solid white; background-color: rgba(51, 196, 51, 0.445);">Read More</a>
+    </div>
+
+</div>
+<center><a href="http://127.0.0.1:5500/Allied.html/secondpage.html" download style="text-align: center;">
+  <button class="download-btn">Download Website</button>
+</a>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
